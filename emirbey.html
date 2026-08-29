@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>55 Fındık | Yönetim Paneli</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#1A1A1A" />
+<link rel="icon" type="image/png" href="data/55fındık.png" />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; border-radius: 0 !important; }
+  :root {
+    --kahve:#2A1810; --kahve-2:#3A2418; --red:#D62828; --red-dark:#A61E1E;
+    --green:#146C43; --krem:#F7EEDD; --ink:#241209; --muted:#7A6650; --white:#fff;
+    --star:#FFB800;
+    --koyu-siyah:#1A1A1A; --koyu-gri:#2B2B2B; --gri-koyu:#3D3D3D;
+  }
+  body { font-family:'Inter',sans-serif; background:var(--koyu-siyah); color:var(--krem); min-height:100vh; -webkit-font-smoothing:antialiased; }
+  header.top {
+    background:var(--koyu-gri); border-bottom:3px solid var(--red);
+    padding:14px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    position:sticky; top:0; z-index:500; box-shadow:0 4px 16px rgba(0,0,0,.5);
+  }
+  .header-marka { display:flex; align-items:center; gap:12px; min-width:0; }
+  .header-logo {
+    width:42px; height:42px; border-radius:50% !important; background:var(--koyu-siyah);
+    border:2px solid var(--red); overflow:hidden; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+  }
+  .header-logo img { width:100%; height:100%; object-fit:cover; }
+  .header-metin h1 { font-family:'Fredoka',sans-serif; font-size:18px; color:var(--krem); line-height:1.2; }
+  .header-metin h1 span { color:var(--red); }
+  .header-metin p { font-size:11px; color:var(--muted); font-weight:700; letter-spacing:.3px; text-transform:uppercase; }
+  .cikis-btn {
+    background:var(--red); color:#fff; border:2px solid var(--red-dark); padding:9px 18px;
+    font-weight:800; font-size:13px; cursor:pointer; display:none; align-items:center; gap:6px; transition:all .2s ease;
+  }
+  .cikis-btn:hover { background:var(--red-dark); transform:translateY(-1px); }
+
+  .login-wrap { display:flex; align-items:center; justify-content:center; min-height:80vh; padding:20px; }
+  .login-logo {
+    width:64px; height:64px; border-radius:50% !important; margin:0 auto 16px; background:var(--koyu-siyah);
+    border:3px solid var(--red); overflow:hidden; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.5);
+  }
+  .login-logo img { width:100%; height:100%; object-fit:cover; }
+  .login-card {
+    background:var(--koyu-gri); color:var(--krem); width:100%; max-width:380px;
+    padding:34px 28px; border-top:6px solid var(--red); box-shadow:0 20px 50px rgba(0,0,0,.6);
+    text-align:center;
+  }
+  .login-card h2 { font-family:'Fredoka',sans-serif; margin-bottom:6px; font-size:22px; color:var(--krem); }
+  .login-card p.alt { color:var(--muted); font-size:13px; margin-bottom:22px; }
+  .login-card .form-grup { text-align:left; }
+  .form-grup { margin-bottom:14px; }
+  .form-grup label { display:block; font-weight:700; font-size:13px; margin-bottom:6px; color:var(--krem); }
+  .form-grup input, .form-grup textarea {
+    width:100%; padding:11px 12px; border:2px solid var(--gri-koyu); font-size:14px; font-weight:600; outline:none;
+    font-family:'Inter',sans-serif; background:var(--koyu-siyah); color:var(--krem);
+  }
+  .form-grup textarea { resize:vertical; min-height:60px; }
+  .form-grup input:focus, .form-grup textarea:focus { border-color:var(--red); }
+  .giris-btn {
+    width:100%; background:var(--red); color:#fff; border:2px solid var(--red-dark);
+    padding:12px; font-weight:800; font-size:15px; cursor:pointer; margin-top:6px;
+  }
+  .giris-btn:hover { background:var(--red-dark); transform:translateY(-1px); }
+  .login-hata { color:var(--red); font-size:13px; font-weight:700; margin-top:10px; min-height:16px; }
+
+  .panel { display:none; max-width:1000px; margin:0 auto; padding:24px 16px 60px; animation:panelGoster .3s ease; }
+  @keyframes panelGoster { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+  .sekmeler {
+    display:flex; gap:10px; margin-bottom:22px; overflow-x:auto; padding-bottom:2px;
+    scrollbar-width:thin;
+  }
+  .sekmeler::-webkit-scrollbar { height:4px; }
+  .sekmeler::-webkit-scrollbar-thumb { background:var(--red); }
+  .sekme-btn {
+    background:var(--gri-koyu); color:var(--krem); border:2px solid var(--gri-koyu);
+    padding:10px 20px; font-weight:800; font-size:14px; cursor:pointer; display:flex; align-items:center; gap:8px;
+    flex-shrink:0; transition:all .2s ease;
+  }
+  .sekme-btn:hover:not(.aktif) { border-color:var(--red); }
+  .sekme-btn.aktif { background:var(--red); border-color:var(--red-dark); }
+  .sekme-icerik { display:none; }
+  .sekme-icerik.aktif { display:block; animation:panelGoster .25s ease; }
+
+  .kutu { background:var(--koyu-gri); color:var(--krem); padding:20px; margin-bottom:20px; border-top:5px solid var(--red); box-shadow:0 10px 26px rgba(0,0,0,.4); }
+  .kutu h3 { font-family:'Fredoka',sans-serif; margin-bottom:14px; font-size:18px; display:flex; align-items:center; gap:8px; color:var(--krem); }
+  .kutu h3 i { color:var(--red); }
+
+  .ayar-satir {
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    padding:12px 0; border-bottom:1px solid var(--gri-koyu);
+  }
+  .ayar-satir:last-child { border-bottom:none; }
+  .ayar-satir .ayar-metin b { display:block; font-size:14px; color:var(--krem); margin-bottom:2px; }
+  .ayar-satir .ayar-metin span { font-size:12px; color:var(--muted); }
+  .anahtar { position:relative; display:inline-block; width:46px; height:26px; flex-shrink:0; }
+  .anahtar input { opacity:0; width:0; height:0; }
+  .anahtar-slider {
+    position:absolute; cursor:pointer; inset:0; background-color:var(--gri-koyu); transition:.2s;
+  }
+  .anahtar-slider::before {
+    position:absolute; content:""; height:20px; width:20px; left:3px; bottom:3px;
+    background-color:#fff; transition:.2s;
+  }
+  .anahtar input:checked + .anahtar-slider { background-color:var(--green); }
+  .anahtar input:checked + .anahtar-slider::before { transform:translateX(20px); }
+  .telegram-durum { font-size:13px; font-weight:700; color:var(--green); display:block; margin-top:10px; min-height:16px; }
+  .telegram-durum.hata { color:var(--red); }
+  .buton-satiri { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .ikincil-btn {
+    background:var(--gri-koyu); color:#fff; border:2px solid var(--gri-koyu); padding:11px 20px;
+    font-weight:800; font-size:14px; cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:all .2s ease;
+  }
+  .ikincil-btn:hover { background:var(--koyu-siyah); transform:translateY(-1px); }
+
+  .arama-kutusu {
+    display:flex; gap:10px; margin-bottom:16px; align-items:center;
+  }
+  .arama-kutusu input {
+    flex:1; padding:10px 14px; border:2px solid var(--gri-koyu); font-size:14px;
+    font-weight:600; outline:none; font-family:'Inter',sans-serif; background:var(--koyu-siyah); color:var(--krem);
+  }
+  .arama-kutusu input:focus { border-color:var(--red); }
+  .arama-kutusu input::placeholder { color:var(--muted); }
+  .arama-kutusu .arama-btn {
+    background:var(--red); color:#fff; border:2px solid var(--red-dark); padding:10px 18px;
+    font-weight:800; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:6px;
+  }
+  .arama-kutusu .arama-btn:hover { background:var(--red-dark); }
+  .arama-kutusu .temizle-btn {
+    background:var(--gri-koyu); color:#fff; border:2px solid var(--gri-koyu); padding:10px 14px;
+    font-weight:800; font-size:13px; cursor:pointer; display:none; align-items:center; gap:6px;
+  }
+  .arama-kutusu .temizle-btn:hover { background:var(--koyu-siyah); }
+
+  .yukle-alani { display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap; margin-bottom:6px; }
+  .yukle-alani .form-grup { flex:1; min-width:200px; margin-bottom:0; }
+  .ekle-btn {
+    background:var(--red); color:#fff; padding:11px 22px; font-weight:800; font-size:14px;
+    cursor:pointer; border:2px solid var(--red-dark); display:inline-flex; align-items:center; gap:8px;
+  }
+  .ekle-btn:hover { background:var(--red-dark); transform:translateY(-1px); }
+  .yukleme-durum { font-size:13px; font-weight:700; color:var(--green); display:block; margin-top:8px; }
+  .yukleme-durum.hata { color:var(--red); }
+
+  .foto-yardim {
+    background:var(--koyu-siyah); border-left:4px solid var(--red); padding:10px 14px; font-size:12.5px;
+    color:var(--muted); line-height:1.6; margin-bottom:16px;
+  }
+  .foto-yardim b { color:var(--krem); }
+  .foto-yardim a { color:var(--red); font-weight:700; }
+
+  .galeri-grid {
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:14px; margin-top:18px;
+  }
+  .galeri-item {
+    position:relative; aspect-ratio:9/16; overflow:hidden; border:2px solid var(--gri-koyu);
+    background:var(--koyu-siyah); display:flex; flex-direction:column;
+  }
+  .galeri-item .img-wrap { flex:1; overflow:hidden; position:relative; }
+  .galeri-item img { width:100%; height:100%; object-fit:cover; display:block; }
+  .galeri-sil {
+    position:absolute; top:6px; right:6px; background:rgba(0,0,0,.8); color:#fff; border:none;
+    width:30px; height:30px; cursor:pointer; font-size:13px; z-index:2;
+  }
+  .galeri-sil:hover { background:var(--red); }
+  .galeri-aciklama {
+    padding:8px 10px; font-size:12px; font-weight:600; color:var(--krem);
+    border-top:1px solid var(--gri-koyu); background:var(--koyu-gri);
+  }
+  .galeri-aciklama input {
+    width:100%; padding:6px 8px; border:1px solid var(--gri-koyu); font-size:12px; font-weight:600;
+    outline:none; font-family:'Inter',sans-serif; background:var(--koyu-siyah); color:var(--krem);
+  }
+  .galeri-aciklama input:focus { border-color:var(--red); }
+  .galeri-aciklama input::placeholder { color:var(--muted); }
+  .bos-mesaj { color:var(--muted); font-size:13px; padding:10px 0; }
+
+  .yorum-yonet-kart {
+    background:var(--koyu-siyah); border-left:6px solid var(--red); padding:12px 14px; margin-bottom:10px; box-shadow:0 4px 12px rgba(0,0,0,.3);
+  }
+  .yorum-yonet-kart .ust { display:flex; justify-content:space-between; font-weight:800; margin-bottom:6px; gap:8px; flex-wrap:wrap; }
+  .yorum-yonet-kart .isim { color:var(--red); }
+  .yorum-yonet-kart .tel { color:var(--muted); font-size:12px; font-weight:600; }
+  .yorum-yonet-kart .metin { font-size:14px; line-height:1.4; margin-bottom:6px; color:var(--krem); }
+  .yorum-yonet-kart .yildizlar { color:var(--star); font-size:14px; margin-bottom:8px; letter-spacing:2px; }
+  .yorum-yonet-kart .yildizlar .bos { color:var(--gri-koyu); }
+  .yorum-btn-grup { display:flex; gap:8px; }
+  .btn-onayla, .btn-sil {
+    border:none; padding:8px 16px; font-weight:800; font-size:12px; cursor:pointer; color:#fff;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .btn-onayla { background:var(--green); }
+  .btn-onayla:hover { background:#0E4E31; }
+  .btn-sil { background:var(--red); }
+  .btn-sil:hover { background:var(--red-dark); }
+
+  h4.alt-baslik { font-family:'Fredoka',sans-serif; font-size:15px; margin:22px 0 10px; color:var(--krem); }
+  h4.alt-baslik:first-of-type { margin-top:0; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="header-marka">
+    <div class="header-logo"><img src="data/55fındık.png" alt="55 Fındık logosu" onerror="this.parentElement.style.display='none';" /></div>
+    <div class="header-metin">
+      <h1>55 <span>Fındık</span></h1>
+      <p>Yönetim Paneli</p>
+    </div>
+  </div>
+  <button class="cikis-btn" id="cikisBtn"><i class="fas fa-right-from-bracket"></i> Çıkış Yap</button>
+</header>
+
+<div class="login-wrap" id="loginWrap">
+  <div>
+    <div class="login-card">
+      <div class="login-logo"><img src="data/55fındık.png" alt="55 Fındık logosu" onerror="this.parentElement.style.display='none';" /></div>
+      <h2>Giriş Yap</h2>
+      <p class="alt">Fotoğraf ve yorum yönetimi için giriş yapın.</p>
+      <div class="form-grup">
+        <label>E-posta</label>
+        <input type="email" id="girisEmail" placeholder="ornek@55findik.com" />
+      </div>
+      <div class="form-grup">
+        <label>Şifre</label>
+        <input type="password" id="girisSifre" placeholder="••••••••" />
+      </div>
+      <button class="giris-btn" id="girisBtn"><i class="fas fa-lock"></i> Giriş Yap</button>
+      <div class="login-hata" id="girisHata"></div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="panel">
+  <div class="sekmeler">
+    <button class="sekme-btn aktif" data-sekme="galeri"><i class="fas fa-images"></i> Galeri</button>
+    <button class="sekme-btn" data-sekme="yorumlar"><i class="fas fa-comments"></i> Yorumlar</button>
+    <button class="sekme-btn" data-sekme="ayarlar"><i class="fas fa-gear"></i> Ayarlar</button>
+  </div>
+
+  <div class="sekme-icerik aktif" id="sekme-galeri">
+    <div class="kutu">
+      <h3>Fotoğraf Ekle</h3>
+      <div class="foto-yardim">
+        <b>📸 ÜCRETSİZ Fotoğraf Yükleme:</b><br>
+        1. <a href="https://imgbb.com/" target="_blank" rel="noopener">imgbb.com</a> adresine gidin (ücretsiz)<br>
+        2. Fotoğrafınızı yükleyin<br>
+        3. <b>"Direct links"</b> seçeneğini seçin<br>
+        4. Linki kopyalayın (örn: <b>https://i.ibb.co/XXXX/foto.jpg</b>)<br>
+        5. Aşağıya yapıştırın
+      </div>
+      <div class="yukle-alani">
+        <div class="form-grup">
+          <label>Fotoğraf Linki (URL)</label>
+          <input type="url" id="fotoUrl" placeholder="https://i.ibb.co/..." />
+        </div>
+        <div class="form-grup">
+          <label>Açıklama (opsiyonel)</label>
+          <input type="text" id="fotoAciklama" placeholder="Örn: 500 kg fındık alımı" />
+        </div>
+        <button class="ekle-btn" id="fotoEkleBtn"><i class="fas fa-plus"></i> Galeriye Ekle</button>
+      </div>
+      <span class="yukleme-durum" id="yuklemeDurum"></span>
+    </div>
+    <div class="kutu">
+      <h3>Mevcut Fotoğraflar</h3>
+      <div class="arama-kutusu">
+        <input type="text" id="fotoAramaInput" placeholder="Açıklamaya göre fotoğraf ara..." />
+        <button class="arama-btn" id="fotoAramaBtn"><i class="fas fa-search"></i> Ara</button>
+        <button class="temizle-btn" id="fotoAramaTemizle"><i class="fas fa-times"></i> Temizle</button>
+      </div>
+      <div class="galeri-grid" id="galeriGrid"></div>
+    </div>
+  </div>
+
+  <div class="sekme-icerik" id="sekme-yorumlar">
+    <div class="kutu">
+      <div class="arama-kutusu">
+        <input type="text" id="yorumAramaInput" placeholder="İsme göre yorum ara..." />
+        <button class="arama-btn" id="yorumAramaBtn"><i class="fas fa-search"></i> Ara</button>
+        <button class="temizle-btn" id="yorumAramaTemizle"><i class="fas fa-times"></i> Temizle</button>
+      </div>
+      <h4 class="alt-baslik">Onay Bekleyen Yorumlar</h4>
+      <div id="bekleyenYorumlar"></div>
+      <h4 class="alt-baslik">Yayındaki Yorumlar</h4>
+      <div id="yayindakiYorumlar"></div>
+    </div>
+  </div>
+
+  <div class="sekme-icerik" id="sekme-ayarlar">
+    <div class="kutu">
+      <h3><i class="fab fa-telegram"></i> Telegram Bildirimleri</h3>
+      <div class="foto-yardim">
+        <b>📲 Nasıl kurulur:</b><br>
+        1. Telegram'da <b>@BotFather</b>'a yazıp <b>/newbot</b> komutuyla bir bot oluşturun, size verdiği <b>token</b>'ı kopyalayın.<br>
+        2. Oluşturduğunuz bota Telegram'dan bir mesaj gönderin (örn. "merhaba").<br>
+        3. Tarayıcıda <b>https://api.telegram.org/bot&lt;TOKEN&gt;/getUpdates</b> adresini açın, sonuçta çıkan <b>"chat":{"id": ...}</b> değerini <b>Chat ID</b> olarak kullanın. (Kolay yol: <b>@userinfobot</b>'a yazıp kendi ID'nizi de öğrenebilirsiniz.)<br>
+        4. Aşağıya token ve chat ID'yi girip kaydedin.
+      </div>
+      <div class="form-grup">
+        <label>Bot Token</label>
+        <input type="text" id="tgToken" placeholder="123456789:AAExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+      </div>
+      <div class="form-grup">
+        <label>Chat ID</label>
+        <input type="text" id="tgChatId" placeholder="Örn: 123456789" />
+      </div>
+
+      <div class="ayar-satir">
+        <div class="ayar-metin"><b>💬 Yorum bildirimi</b><span>Siteye yeni bir yorum geldiğinde bildirim gönder</span></div>
+        <label class="anahtar"><input type="checkbox" id="tgYorum" /><span class="anahtar-slider"></span></label>
+      </div>
+      <div class="ayar-satir">
+        <div class="ayar-metin"><b>🌐 Ziyaret bildirimi</b><span>Siteye her yeni ziyaret geldiğinde bildirim gönder</span></div>
+        <label class="anahtar"><input type="checkbox" id="tgZiyaret" /><span class="anahtar-slider"></span></label>
+      </div>
+      <div class="ayar-satir">
+        <div class="ayar-metin"><b>🖱️ Tıklama bildirimi</b><span>Bir butona veya konum işaretine tıklandığında bildirim gönder</span></div>
+        <label class="anahtar"><input type="checkbox" id="tgTiklama" /><span class="anahtar-slider"></span></label>
+      </div>
+
+      <div class="buton-satiri">
+        <button class="ekle-btn" id="tgKaydetBtn"><i class="fas fa-floppy-disk"></i> Kaydet</button>
+        <button class="ikincil-btn" id="tgTestBtn"><i class="fas fa-paper-plane"></i> Test Mesajı Gönder</button>
+      </div>
+      <span class="telegram-durum" id="tgDurum"></span>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import {
+    getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import {
+    getFirestore, collection, addDoc, deleteDoc, doc, updateDoc, setDoc, getDoc,
+    onSnapshot, query, where, serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  import { firebaseConfig } from "./firebase-config.js";
+
+  const dolduruldu = firebaseConfig.apiKey && !firebaseConfig.apiKey.startsWith('BURAYA');
+  const loginWrap = document.getElementById('loginWrap');
+  const panel = document.getElementById('panel');
+  const girisHata = document.getElementById('girisHata');
+
+  if (!dolduruldu) {
+    loginWrap.innerHTML = '<div class="login-card"><h2>Firebase Kurulu Değil</h2><p class="alt">Bu paneli kullanabilmek için önce <b>firebase-config.js</b> dosyasını doldurmanız gerekiyor.</p></div>';
+  } else {
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const cikisBtn = document.getElementById('cikisBtn');
+
+    let tumGaleriDocs = [];
+    let galeriAramaAktif = false;
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        loginWrap.style.display = 'none';
+        panel.style.display = 'block';
+        cikisBtn.style.display = 'inline-flex';
+        galeriCanliDinle();
+        yorumlariCanliDinle();
+        telegramAyarYukleAdmin();
+      } else {
+        loginWrap.style.display = 'flex';
+        panel.style.display = 'none';
+        cikisBtn.style.display = 'none';
+      }
+    });
+
+    document.getElementById('girisBtn').addEventListener('click', async () => {
+      const email = document.getElementById('girisEmail').value.trim();
+      const sifre = document.getElementById('girisSifre').value;
+      girisHata.textContent = '';
+      if (!email || !sifre) { girisHata.textContent = 'E-posta ve şifre girin.'; return; }
+      try {
+        await signInWithEmailAndPassword(auth, email, sifre);
+      } catch (err) {
+        girisHata.textContent = 'Giriş başarısız: e-posta veya şifre hatalı.';
+      }
+    });
+    cikisBtn.addEventListener('click', () => signOut(auth));
+
+    document.querySelectorAll('.sekme-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.sekme-btn').forEach((b) => b.classList.remove('aktif'));
+        document.querySelectorAll('.sekme-icerik').forEach((s) => s.classList.remove('aktif'));
+        btn.classList.add('aktif');
+        document.getElementById('sekme-' + btn.dataset.sekme).classList.add('aktif');
+      });
+    });
+
+    // ===== TELEGRAM AYARLARI =====
+    const tgToken = document.getElementById('tgToken');
+    const tgChatId = document.getElementById('tgChatId');
+    const tgYorum = document.getElementById('tgYorum');
+    const tgZiyaret = document.getElementById('tgZiyaret');
+    const tgTiklama = document.getElementById('tgTiklama');
+    const tgDurum = document.getElementById('tgDurum');
+    const tgKaydetBtn = document.getElementById('tgKaydetBtn');
+    const tgTestBtn = document.getElementById('tgTestBtn');
+
+    async function telegramAyarYukleAdmin() {
+      try {
+        const snap = await getDoc(doc(db, 'settings', 'telegram'));
+        if (snap.exists()) {
+          const d = snap.data();
+          tgToken.value = d.botToken || '';
+          tgChatId.value = d.chatId || '';
+          tgYorum.checked = !!d.notifyOnComment;
+          tgZiyaret.checked = !!d.notifyOnVisit;
+          tgTiklama.checked = !!d.notifyOnClick;
+        }
+      } catch (err) {
+        console.warn('Telegram ayarları okunamadı:', err);
+      }
+    }
+
+    tgKaydetBtn.addEventListener('click', async () => {
+      tgDurum.classList.remove('hata');
+      tgDurum.textContent = 'Kaydediliyor...';
+      try {
+        await setDoc(doc(db, 'settings', 'telegram'), {
+          botToken: tgToken.value.trim(),
+          chatId: tgChatId.value.trim(),
+          notifyOnComment: tgYorum.checked,
+          notifyOnVisit: tgZiyaret.checked,
+          notifyOnClick: tgTiklama.checked,
+          updatedAt: serverTimestamp()
+        }, { merge: true });
+        tgDurum.textContent = 'Ayarlar kaydedildi.';
+      } catch (err) {
+        console.error(err);
+        tgDurum.classList.add('hata');
+        tgDurum.textContent = 'Kaydedilemedi, tekrar deneyin.';
+      }
+    });
+
+    tgTestBtn.addEventListener('click', async () => {
+      const token = tgToken.value.trim();
+      const chatId = tgChatId.value.trim();
+      tgDurum.classList.remove('hata');
+      if (!token || !chatId) {
+        tgDurum.classList.add('hata');
+        tgDurum.textContent = 'Önce Bot Token ve Chat ID girin.';
+        return;
+      }
+      tgDurum.textContent = 'Test mesajı gönderiliyor...';
+      try {
+        const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: chatId, text: '✅ 55 Fındık admin panelinden test mesajı — bağlantı çalışıyor!' })
+        });
+        const veri = await res.json();
+        if (veri.ok) {
+          tgDurum.textContent = 'Test mesajı gönderildi, Telegram\'ı kontrol edin.';
+        } else {
+          tgDurum.classList.add('hata');
+          tgDurum.textContent = 'Gönderilemedi: ' + (veri.description || 'Token veya Chat ID hatalı olabilir.');
+        }
+      } catch (err) {
+        console.error(err);
+        tgDurum.classList.add('hata');
+        tgDurum.textContent = 'Gönderilemedi, bağlantıyı kontrol edin.';
+      }
+    });
+
+    const fotoUrl = document.getElementById('fotoUrl');
+    const fotoAciklama = document.getElementById('fotoAciklama');
+    const fotoEkleBtn = document.getElementById('fotoEkleBtn');
+    const yuklemeDurum = document.getElementById('yuklemeDurum');
+    const galeriGrid = document.getElementById('galeriGrid');
+
+    fotoEkleBtn.addEventListener('click', async () => {
+      const url = fotoUrl.value.trim();
+      const aciklama = fotoAciklama.value.trim();
+      yuklemeDurum.classList.remove('hata');
+      if (!url) {
+        yuklemeDurum.classList.add('hata');
+        yuklemeDurum.textContent = 'Lütfen bir fotoğraf linki girin.';
+        return;
+      }
+      try {
+        await addDoc(collection(db, 'gallery'), { 
+          url, 
+          aciklama: aciklama || '', 
+          createdAt: serverTimestamp() 
+        });
+        yuklemeDurum.textContent = 'Fotoğraf eklendi.';
+        fotoUrl.value = '';
+        fotoAciklama.value = '';
+      } catch (err) {
+        console.error(err);
+        yuklemeDurum.classList.add('hata');
+        yuklemeDurum.textContent = 'Eklenemedi, tekrar deneyin.';
+      }
+    });
+
+    function galeriGridCiz(docs) {
+      galeriGrid.innerHTML = '';
+      if (docs.length === 0) {
+        galeriGrid.innerHTML = '<p class="bos-mesaj">Fotoğraf bulunamadı.</p>';
+        return;
+      }
+      docs.forEach((docSnap) => {
+        const d = docSnap.data();
+        const item = document.createElement('div');
+        item.className = 'galeri-item';
+        item.innerHTML = `
+          <div class="img-wrap">
+            <img src="${d.url}" alt="Fotoğraf" referrerpolicy="no-referrer" />
+            <button class="galeri-sil" title="Sil"><i class="fas fa-trash"></i></button>
+          </div>
+          <div class="galeri-aciklama">
+            <input type="text" value="${(d.aciklama || '').replace(/"/g, '&quot;')}" placeholder="Açıklama yaz..." data-id="${docSnap.id}" />
+          </div>
+        `;
+        item.querySelector('.galeri-sil').addEventListener('click', async () => {
+          if (!confirm('Bu fotoğrafı silmek istediğinize emin misiniz?')) return;
+          await deleteDoc(doc(db, 'gallery', docSnap.id));
+        });
+        const aciklamaInput = item.querySelector('.galeri-aciklama input');
+        aciklamaInput.addEventListener('change', async () => {
+          try {
+            await updateDoc(doc(db, 'gallery', docSnap.id), { aciklama: aciklamaInput.value.trim() });
+          } catch (err) {
+            console.error('Açıklama güncellenemedi:', err);
+          }
+        });
+        galeriGrid.appendChild(item);
+      });
+    }
+
+    function galeriCanliDinle() {
+      const q = query(collection(db, 'gallery'));
+      onSnapshot(q, (snap) => {
+        tumGaleriDocs = snap.docs.slice().sort((a, b) => {
+          const ta = a.data().createdAt?.toMillis?.() || 0;
+          const tb = b.data().createdAt?.toMillis?.() || 0;
+          return tb - ta;
+        });
+        if (!galeriAramaAktif) {
+          galeriGridCiz(tumGaleriDocs);
+        }
+      });
+    }
+
+    const fotoAramaInput = document.getElementById('fotoAramaInput');
+    const fotoAramaBtn = document.getElementById('fotoAramaBtn');
+    const fotoAramaTemizle = document.getElementById('fotoAramaTemizle');
+
+    function fotoAra() {
+      const terim = fotoAramaInput.value.trim().toLowerCase();
+      if (!terim) {
+        galeriAramaAktif = false;
+        fotoAramaTemizle.style.display = 'none';
+        galeriGridCiz(tumGaleriDocs);
+        return;
+      }
+      galeriAramaAktif = true;
+      fotoAramaTemizle.style.display = 'flex';
+      const sonuclar = tumGaleriDocs.filter((d) => {
+        const aciklama = (d.data().aciklama || '').toLowerCase();
+        return aciklama.includes(terim);
+      });
+      galeriGridCiz(sonuclar);
+    }
+
+    fotoAramaBtn.addEventListener('click', fotoAra);
+    fotoAramaInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') fotoAra();
+    });
+    fotoAramaTemizle.addEventListener('click', () => {
+      fotoAramaInput.value = '';
+      galeriAramaAktif = false;
+      fotoAramaTemizle.style.display = 'none';
+      galeriGridCiz(tumGaleriDocs);
+    });
+
+    const bekleyenKutu = document.getElementById('bekleyenYorumlar');
+    const yayindakiKutu = document.getElementById('yayindakiYorumlar');
+    let tumYorumDocs = { bekleyen: [], yayinda: [] };
+    let yorumAramaAktif = false;
+
+    function yildizGoster(puan) {
+      let html = '';
+      for (let i = 1; i <= 5; i++) {
+        if (i <= puan) {
+          html += '<i class="fas fa-star"></i>';
+        } else {
+          html += '<i class="fas fa-star bos"></i>';
+        }
+      }
+      return html;
+    }
+
+    function yorumYonetKartOlustur(id, d, onayGoster) {
+      const kart = document.createElement('div');
+      kart.className = 'yorum-yonet-kart';
+      kart.innerHTML = `
+        <div class="ust">
+          <span class="isim">${d.name || 'Anonim'}</span>
+          <span class="tel">${d.phone || '---'}</span>
+        </div>
+        <div class="yildizlar">${yildizGoster(d.rating || 0)}</div>
+        <div class="metin">${d.text || ''}</div>
+        <div class="yorum-btn-grup">
+          ${onayGoster ? '<button class="btn-onayla"><i class="fas fa-check"></i> Onayla</button>' : ''}
+          <button class="btn-sil"><i class="fas fa-trash"></i> Sil</button>
+        </div>
+      `;
+      if (onayGoster) {
+        kart.querySelector('.btn-onayla').addEventListener('click', async () => {
+          await updateDoc(doc(db, 'comments', id), { approved: true });
+        });
+      }
+      kart.querySelector('.btn-sil').addEventListener('click', async () => {
+        if (!confirm('Bu yorumu silmek istediğinize emin misiniz?')) return;
+        await deleteDoc(doc(db, 'comments', id));
+      });
+      return kart;
+    }
+
+    function siraliDocs(snap) {
+      return snap.docs.slice().sort((a, b) => {
+        const ta = a.data().createdAt?.toMillis?.() || 0;
+        const tb = b.data().createdAt?.toMillis?.() || 0;
+        return tb - ta;
+      });
+    }
+
+    function yorumlariCiz(bekleyenDocs, yayindaDocs) {
+      bekleyenKutu.innerHTML = '';
+      if (bekleyenDocs.length === 0) {
+        bekleyenKutu.innerHTML = '<p class="bos-mesaj">Onay bekleyen yorum yok.</p>';
+      } else {
+        bekleyenDocs.forEach((d) => bekleyenKutu.appendChild(yorumYonetKartOlustur(d.id, d.data(), true)));
+      }
+      yayindakiKutu.innerHTML = '';
+      if (yayindaDocs.length === 0) {
+        yayindakiKutu.innerHTML = '<p class="bos-mesaj">Yayında yorum yok.</p>';
+      } else {
+        yayindaDocs.forEach((d) => yayindakiKutu.appendChild(yorumYonetKartOlustur(d.id, d.data(), false)));
+      }
+    }
+
+    function yorumlariCanliDinle() {
+      const qBekleyen = query(collection(db, 'comments'), where('approved', '==', false));
+      onSnapshot(qBekleyen, (snap) => {
+        tumYorumDocs.bekleyen = siraliDocs(snap);
+        if (!yorumAramaAktif) {
+          yorumlariCiz(tumYorumDocs.bekleyen, tumYorumDocs.yayinda || []);
+        }
+      }, (err) => console.warn('Bekleyen yorumlar okunamadı:', err));
+
+      const qYayinda = query(collection(db, 'comments'), where('approved', '==', true));
+      onSnapshot(qYayinda, (snap) => {
+        tumYorumDocs.yayinda = siraliDocs(snap);
+        if (!yorumAramaAktif) {
+          yorumlariCiz(tumYorumDocs.bekleyen || [], tumYorumDocs.yayinda);
+        }
+      }, (err) => console.warn('Yayındaki yorumlar okunamadı:', err));
+    }
+
+    const yorumAramaInput = document.getElementById('yorumAramaInput');
+    const yorumAramaBtn = document.getElementById('yorumAramaBtn');
+    const yorumAramaTemizle = document.getElementById('yorumAramaTemizle');
+
+    function yorumAra() {
+      const terim = yorumAramaInput.value.trim().toLowerCase();
+      if (!terim) {
+        yorumAramaAktif = false;
+        yorumAramaTemizle.style.display = 'none';
+        yorumlariCiz(tumYorumDocs.bekleyen || [], tumYorumDocs.yayinda || []);
+        return;
+      }
+      yorumAramaAktif = true;
+      yorumAramaTemizle.style.display = 'flex';
+      const bekleyenFiltre = (tumYorumDocs.bekleyen || []).filter((d) => {
+        const isim = (d.data().name || '').toLowerCase();
+        return isim.includes(terim);
+      });
+      const yayindaFiltre = (tumYorumDocs.yayinda || []).filter((d) => {
+        const isim = (d.data().name || '').toLowerCase();
+        return isim.includes(terim);
+      });
+      yorumlariCiz(bekleyenFiltre, yayindaFiltre);
+    }
+
+    yorumAramaBtn.addEventListener('click', yorumAra);
+    yorumAramaInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') yorumAra();
+    });
+    yorumAramaTemizle.addEventListener('click', () => {
+      yorumAramaInput.value = '';
+      yorumAramaAktif = false;
+      yorumAramaTemizle.style.display = 'none';
+      yorumlariCiz(tumYorumDocs.bekleyen || [], tumYorumDocs.yayinda || []);
+    });
+  }
+</script>
+</body>
+</html>
