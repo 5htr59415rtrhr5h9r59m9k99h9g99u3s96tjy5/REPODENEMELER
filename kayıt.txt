@@ -1,0 +1,1571 @@
+        ///   <div class="avatar-circle">EÇ</div>///
+
+        <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>55 Fındık | Samsun Fındık Alım Merkezi</title>
+
+  <!-- Temel SEO -->
+  <meta name="description" content="55 Fındık, Samsun'da güncel fındık alım fiyatları, doğru tartı ve güvenilir hizmet sunan fındık alım merkezidir. Levent Sarıoğlu ve Ethem Çıtlak ile hemen iletişime geçin." />
+  <meta name="keywords" content="55 fındık, Samsun fındık alım, fındık fiyatları, fındık alım merkezi, Samsun zahireci, fındık alan yerler Samsun" />
+  <meta name="author" content="55 Fındık" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#2A1810" />
+  <link rel="canonical" href="https://55fındık.com/" />
+  <link rel="icon" type="image/png" href="data/55fındık.png" />
+  <link rel="apple-touch-icon" href="data/55fındık.png" />
+
+  <!-- Sosyal medya paylaşım kartları -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="55 Fındık" />
+  <meta property="og:title" content="55 Fındık | Samsun Fındık Alım Merkezi" />
+  <meta property="og:description" content="Samsun'da güncel fındık alım fiyatları, doğru tartı ve güvenilir hizmet. Levent Sarıoğlu ve Ethem Çıtlak ile hemen iletişime geçin." />
+  <meta property="og:image" content="data/55fındık.png" />
+  <meta property="og:url" content="https://55fındık.com/" />
+  <meta property="og:locale" content="tr_TR" />
+
+  <!-- Twitter/X kartı -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="55 Fındık | Samsun Fındık Alım Merkezi" />
+  <meta name="twitter:description" content="Samsun'da güncel fındık alım fiyatları, doğru tartı ve güvenilir hizmet." />
+  <meta name="twitter:image" content="data/55fındık.png" />
+
+  <!-- Yerel işletme / harita aramaları için konum bilgisi -->
+  <meta name="geo.region" content="TR-55" />
+  <meta name="geo.placename" content="Samsun" />
+
+  <!-- Google için yapılandırılmış veri (Yerel İşletme) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "55 Fındık",
+    "image": "data/55fındık.png",
+    "url": "https://55fındık.com/",
+    "description": "Samsun'da güncel fındık alım fiyatları, doğru tartı ve güvenilir hizmet sunan fındık alım merkezi.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Samsun",
+      "addressCountry": "TR"
+    },
+    "telephone": ["+905467820904", "+905453515555"],
+    "priceRange": "$$"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      border-radius: 0 !important;
+    }
+    :root {
+      --kahve: #2A1810;
+      --kahve-2: #3A2418;
+      --red: #D62828;
+      --red-dark: #A61E1E;
+      --green: #146C43;
+      --green-dark: #0E4E31;
+      --krem: #F7EEDD;
+      --krem-dim: #CBB89E;
+      --ink: #241209;
+      --muted: #7A6650;
+      --white: #ffffff;
+      --star: #FFB800;
+      --shadow-soft: 0 10px 26px rgba(0, 0, 0, .35);
+      --shadow-hard: 0 18px 40px rgba(0, 0, 0, .45);
+      --koyu-gri: #2B2B2B;
+      --koyu-siyah: #1A1A1A;
+      --gri-koyu: #3D3D3D;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--kahve);
+      color: var(--krem);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(12px, 3vw, 28px);
+      width: 100%;
+    }
+
+    .bolum-cizgi {
+      width: 100%;
+      height: 4px;
+      background: var(--red);
+      margin: 0;
+    }
+
+    .tabela {
+      position: relative;
+      width: 100%;
+      min-height: 84px;
+      max-height: 180px;
+      background: linear-gradient(112deg,
+          var(--red) 0%, var(--red) 25.7%,
+          var(--white) 25.7%, var(--white) 26%,
+          #146C43 26%, #146C43 74%,
+          var(--white) 74%, var(--white) 74.3%,
+          var(--red) 74.3%, var(--red) 100%);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .35);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .tabela-inner {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      padding: 0;
+    }
+    .tabela-logo-slot {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      padding-left: 15px;
+    }
+    .tabela-logo {
+      width: clamp(48px, 7vw, 88px);
+      height: clamp(48px, 7vw, 88px);
+      border-radius: 50% !important;
+      background: var(--white);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .3);
+      border: 3px solid var(--white);
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tabela-logo img { width: 100%; height: 100%; object-fit: cover; }
+    .tabela-logo.logo-empty {
+      background: repeating-linear-gradient(45deg, #f1e9d8, #f1e9d8 6px, #fff 6px, #fff 12px);
+    }
+    .tabela-center {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      overflow: hidden;
+    }
+    .tabela-title {
+      font-family: 'Anton', 'Fredoka', sans-serif;
+      font-weight: 400;
+      color: var(--white);
+      font-size: clamp(24px, 7vw, 66px);
+      line-height: 1;
+      text-shadow: 0 3px 0 rgba(0, 0, 0, .25);
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+    .tabela-people {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: clamp(3px, 0.8vw, 6px);
+      align-items: flex-end;
+      min-width: 0;
+      max-width: 30%;
+      flex-shrink: 0;
+      padding-right: 15px;
+    }
+    .tabela-person {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      min-width: 0;
+      max-width: 100%;
+    }
+    .tabela-person .pname {
+      display: block;
+      font-weight: 800;
+      font-size: clamp(7px, 1.6vw, 13px);
+      line-height: 1.25;
+      color: var(--white);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+      white-space: nowrap;
+    }
+    .tabela-person .pphone {
+      display: block;
+      font-weight: 700;
+      font-size: clamp(6.5px, 1.4vw, 11px);
+      line-height: 1.2;
+      color: var(--white);
+      opacity: .92;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+      white-space: nowrap;
+    }
+
+    /* Web boyutu büyüdükçe isimler ve telefonlar büyüsün */
+    @media (min-width: 769px) {
+      .tabela-person .pname {
+        font-size: clamp(14px, 2.5vw, 26px);
+      }
+      .tabela-person .pphone {
+        font-size: clamp(12px, 2vw, 20px);
+      }
+    }
+
+    .marquee-banner {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 9px 0;
+      font-weight: 800;
+      font-size: clamp(10px, 1.4vw, 13px);
+      letter-spacing: .5px;
+    }
+    .marquee-banner.mb-green {
+      background: var(--green);
+      color: var(--krem);
+      border-top: 2px solid var(--green-dark);
+      border-bottom: 2px solid var(--green-dark);
+    }
+    .marquee-banner .mb-track {
+      display: inline-block;
+      animation: kaydirYazi 20s linear infinite;
+    }
+    .marquee-banner .mb-track span { padding-right: 46px; }
+    @keyframes kaydirYazi {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .galeri-kayan { padding: 40px 0 24px; background: var(--kahve); }
+    .galeri-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .galeri-header h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(18px, 2.6vw, 30px);
+      font-weight: 700;
+      color: var(--krem);
+    }
+    .galeri-header h2 span { color: var(--red); }
+    .galeri-btn {
+      background: var(--red);
+      color: var(--krem);
+      border: 2px solid var(--red-dark);
+      padding: 10px 22px;
+      font-weight: 800;
+      font-size: clamp(11px, 1.2vw, 14px);
+      cursor: pointer;
+      transition: all .25s ease;
+      font-family: 'Inter', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .galeri-btn:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 10px 0 20px;
+    }
+    .slider-track {
+      display: flex;
+      gap: 28px;
+      width: max-content;
+      animation: surekliKay 40s linear infinite;
+      will-change: transform;
+    }
+    .slider-track:hover { animation-play-state: paused; }
+    @keyframes surekliKay {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .galeri-card {
+      flex: 0 0 auto;
+      width: clamp(280px, 38vw, 420px);
+      aspect-ratio: 9 / 16;
+      border: 4px solid var(--krem);
+      overflow: hidden;
+      position: relative;
+      background: var(--kahve-2);
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .galeri-card:hover {
+      transform: scale(1.04);
+      border-color: var(--red);
+      box-shadow: var(--shadow-hard);
+    }
+    .galeri-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .galeri-card .card-cap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 14px 16px;
+      background: linear-gradient(0deg, rgba(0, 0, 0, .85), rgba(30,30,30,.5), transparent);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.4;
+      letter-spacing: 0.3px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }
+
+    .placeholder-kart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      height: 100%;
+      color: var(--krem-dim);
+      font-size: clamp(14px, 2vw, 20px);
+      font-weight: 700;
+      text-align: center;
+      padding: 20px;
+    }
+    .placeholder-kart i {
+      font-size: clamp(40px, 6vw, 60px);
+      color: var(--krem-dim);
+      opacity: 0.6;
+    }
+    .placeholder-kart .yazi {
+      font-size: clamp(12px, 1.5vw, 16px);
+      color: var(--krem-dim);
+      font-weight: 600;
+    }
+
+    .yorum-panel {
+      background: var(--kahve-2);
+      padding: 32px 0 40px;
+    }
+    .yorum-baslik {
+      font-family: 'Fredoka', sans-serif;
+      color: var(--krem);
+      font-size: clamp(18px, 3vw, 28px);
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .yorum-form-kapsayici {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      background: var(--krem);
+      padding: 18px 18px 20px;
+      border: 2px solid var(--red);
+    }
+    .yorum-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .yorum-input {
+      width: 100%;
+      padding: 10px 12px;
+      background: white;
+      border: 2px solid var(--kahve-2);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 14px;
+      outline: none;
+      transition: border .2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .yorum-input:focus { border-color: var(--red); }
+    .yorum-textarea {
+      width: 100%;
+      padding: 12px;
+      background: white;
+      border: 2px solid var(--kahve-2);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 14px;
+      resize: vertical;
+      min-height: 90px;
+      outline: none;
+      transition: border .2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .yorum-textarea:focus { border-color: var(--red); }
+
+    .yildiz-secici {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 12px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #ddd;
+      user-select: none;
+    }
+    .yildiz-secici .star { transition: color .15s ease; }
+    .yildiz-secici .star.aktif { color: var(--star); }
+
+    .yorum-gonder-btn {
+      background: var(--red);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      border: 2px solid var(--red-dark);
+      font-family: 'Inter', sans-serif;
+    }
+    .yorum-gonder-btn:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+    .yorum-durum {
+      margin-top: 12px;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--green);
+    }
+    .yorum-durum.hata { color: var(--red); }
+
+    .yorum-listesi {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+    .yorum-kart {
+      background: var(--krem);
+      padding: 16px 18px;
+      border-left: 6px solid var(--red);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      color: var(--ink);
+      font-size: 14px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .yorum-kart .yorum-ust {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+      gap: 6px;
+      word-break: break-word;
+    }
+    .yorum-kart .yorum-isim {
+      color: var(--red);
+      word-break: break-word;
+    }
+    .yorum-kart .yorum-tel {
+      color: var(--muted);
+      font-size: 12px;
+      word-break: break-word;
+    }
+    .yorum-kart .yorum-yildizlar {
+      color: var(--star);
+      font-size: 13px;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+    }
+    .yorum-kart .yorum-yildizlar .bos { color: #ddd; }
+    .yorum-kart .yorum-metin {
+      font-weight: 500;
+      line-height: 1.5;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    .yorum-bak-btn {
+      display: block;
+      margin: 20px auto 0;
+      background: var(--kahve);
+      color: var(--krem);
+      border: 2px solid var(--red);
+      padding: 12px 30px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all .25s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .yorum-bak-btn:hover {
+      background: var(--red);
+      transform: translateY(-2px);
+    }
+
+    .iletisim {
+      padding: 44px 0 46px;
+      background: var(--kahve);
+    }
+    .section-head {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .section-head .kicker {
+      display: block;
+      color: var(--red);
+      font-weight: 800;
+      font-size: clamp(10px, 1.2vw, 12px);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 5px;
+    }
+    .section-head h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(18px, 3vw, 28px);
+      color: var(--krem);
+    }
+    .iletisim-panel {
+      background: var(--krem);
+      padding: clamp(20px, 3vw, 34px) clamp(10px, 2.4vw, 30px);
+      width: 100%;
+    }
+    .iletisim-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: clamp(10px, 2vw, 24px);
+      align-items: stretch;
+    }
+    .contact-card {
+      padding: clamp(14px, 2vw, 22px) clamp(8px, 1.4vw, 14px);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid var(--kahve-2);
+      transition: border-color .2s ease;
+      background: var(--white);
+    }
+    .contact-card:hover { border-color: var(--red); }
+     .contact-card.brand-card {
+      
+      background: linear-gradient(160deg, var(--kahve) 0%, var(--kahve-2) 100%);
+      border: 2px solid var(--kahve-2); transition: border-color .2s ease; background: var(--white);
+      box-shadow: 0 8px 22px rgba(0,0,0,.28);
+    }
+    .contact-card.brand-card h3,
+    .contact-card.brand-card .role { color: var(--kahve); }
+    .contact-card.brand-card .role {
+      color: var(--kahve-2);
+      margin-bottom: clamp(10px, 1.6vw, 16px);
+    }
+    .contact-card .avatar-circle {
+      width: clamp(46px, 8vw, 78px);
+      height: clamp(46px, 8vw, 78px);
+      border-radius: 50% !important;
+      margin: 0 0 clamp(8px, 1.4vw, 14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(14px, 2.4vw, 22px);
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--red), var(--kahve-2));
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid var(--kahve-2);
+    }
+    .contact-card .avatar-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .contact-card.brand-card .avatar-circle {
+      background: linear-gradient(135deg, var(--star), var(--red));
+      border-color: var(--star);
+    }
+    .contact-card .contact-phone {
+      display: block;
+      font-size: clamp(9px, 1.3vw, 12px);
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 2px;
+      margin-bottom: clamp(10px, 1.6vw, 16px);
+    }
+    .contact-card.brand-card .contact-phone { color: var(--krem-dim); }
+    .contact-card h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(12px, 2vw, 17px);
+      margin-bottom: 2px;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .contact-card .role {
+      font-size: clamp(7.5px, 1.1vw, 10.5px);
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+      margin-bottom: 2px;
+      display: block;
+    }
+    .contact-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: clamp(6px, 1.2vw, 10px);
+      margin-top: auto;
+    }
+    .btn-contact {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(30px, 6vw, 44px);
+      height: clamp(30px, 6vw, 44px);
+      border-radius: 50% !important;
+      font-size: clamp(12px, 2vw, 16px);
+      transition: all .25s ease;
+      flex-shrink: 0;
+    }
+    .btn-whatsapp { background: #25D366; color: #fff; }
+    .btn-whatsapp:hover {
+      background: #1DA851;
+      transform: translateY(-2px);
+    }
+    .btn-instagram {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+    }
+    .btn-instagram:hover {
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+    }
+    .btn-phone { background: var(--red); color: #fff; }
+    .btn-phone:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    .harita {
+      padding: 44px 0 50px;
+      background: var(--kahve);
+    }
+    .harita-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(8px, 2vw, 26px);
+      align-items: stretch;
+    }
+    .harita-map {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      border: 4px solid var(--krem);
+      overflow: hidden;
+    }
+    .harita-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .harita-info {
+      background: var(--krem);
+      border: 3px solid var(--kahve-2);
+      border-top: 5px solid var(--red);
+      padding: clamp(10px, 2.4vw, 26px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .harita-info h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(11px, 2.2vw, 20px);
+      margin-bottom: clamp(6px, 1.4vw, 12px);
+      color: var(--ink);
+    }
+    .harita-info .adres-satiri {
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: clamp(8px, 1.8vw, 18px);
+      font-size: clamp(8.5px, 1.6vw, 13.5px);
+      line-height: 1.5;
+    }
+    .harita-info .adres-satiri i {
+      color: var(--red);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .hakkimizda-baslik {
+      font-size: clamp(7.5px, 1.2vw, 11px);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--red);
+      margin-bottom: clamp(4px, 1vw, 7px);
+    }
+    p.hakkimizda-p {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: clamp(8px, 1.5vw, 13px);
+    }
+
+    footer {
+      background: var(--kahve-2);
+      color: var(--krem-dim);
+      text-align: center;
+      padding: 22px 0 18px;
+      font-size: clamp(10px, 1.2vw, 13px);
+      font-weight: 500;
+      border-top: 3px solid var(--red);
+    }
+    footer b { color: var(--krem); }
+    .footer-satir {
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+    .footer-kvkk {
+      font-size: clamp(8.5px, 1vw, 11px);
+      color: var(--krem-dim);
+      opacity: .75;
+      max-width: 720px;
+      margin: 10px auto 0;
+      line-height: 1.6;
+    }
+    .footer-yapim {
+      font-size: clamp(8.5px, 1vw, 11px);
+      color: var(--krem-dim);
+      opacity: .6;
+      margin-top: 8px;
+    }
+
+    .konum-float-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      background: var(--red);
+      color: var(--krem);
+      border: 3px solid var(--red-dark);
+      padding: 16px 26px;
+      font-weight: 900;
+      font-size: clamp(14px, 1.6vw, 17px);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: background .3s ease;
+    }
+    .konum-float-btn::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border: 3px solid var(--red);
+      animation: isikEfekti 2s ease-out infinite;
+      pointer-events: none;
+    }
+    @keyframes isikEfekti {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.2); }
+    }
+    .konum-float-btn:hover { background: var(--red-dark); }
+    .konum-float-btn i { font-size: clamp(18px, 2vw, 22px); }
+
+    @media (max-width: 480px) {
+      .konum-float-btn {
+        padding: 12px 16px;
+        bottom: 16px;
+        right: 16px;
+        font-size: 12px;
+        gap: 6px;
+      }
+      .konum-float-btn i { font-size: 15px; }
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .88);
+      backdrop-filter: blur(6px);
+      z-index: 99999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.show { display: flex; }
+    .modal-box {
+      background: var(--koyu-siyah);
+      border: 3px solid var(--red);
+      max-width: 900px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 24px 20px;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .5);
+      animation: modalIn .3s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(.92) translateY(30px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-box .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .modal-box .modal-header h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(18px, 2.6vw, 26px);
+      color: var(--krem);
+    }
+    .modal-close {
+      background: var(--red);
+      color: #fff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .modal-grid .galeri-card {
+      width: 100%;
+      aspect-ratio: 9/16;
+    }
+    .modal-grid .galeri-card .card-cap {
+      background: linear-gradient(0deg, rgba(10,10,10,0.95), rgba(40,40,40,0.75), transparent);
+      text-shadow: 0 1px 2px rgba(0,0,0,1);
+      color: #f0f0f0;
+    }
+
+    .siralama-kutusu {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .siralama-kutusu select {
+      padding: 8px 12px;
+      background: var(--krem);
+      border: 2px solid var(--kahve-2);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    .siralama-kutusu select:focus { border-color: var(--red); }
+
+    /* Yorum modal listesi düzeltmeleri */
+    #yorumModalListesi {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-sizing: border-box;
+    }
+    #yorumModalListesi .yorum-kart {
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    @media (max-width: 768px) {
+      .tabela { min-height: 56px; }
+      .galeri-card { width: 200px; }
+      .iletisim-grid { grid-template-columns: 1fr; }
+      .contact-card { border-bottom: 2px solid var(--kahve-2); }
+      .contact-card:last-child { border-bottom: 2px solid var(--kahve-2); }
+      .harita-grid { grid-template-columns: 1fr; }
+      .yorum-form-grid { grid-template-columns: 1fr; }
+      .modal-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .modal-box { padding: 14px 12px; }
+      .yorum-listesi {
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tabela-logo { width: 44px; height: 44px; }
+      .galeri-card { width: 180px; }
+      .modal-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+      }
+      .modal-grid .galeri-card { border-width: 2px; }
+      .modal-grid .galeri-card .card-cap {
+        font-size: 8px;
+        padding: 4px 6px;
+        -webkit-line-clamp: 2;
+      }
+      .yorum-kart {
+        padding: 12px 14px;
+      }
+      .yorum-kart .yorum-ust {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .tabela-inner { padding: 8px 0; }
+      .tabela-people { align-items: flex-end; }
+      .tabela-logo-slot { justify-content: flex-start; }
+      .tabela-person .pname {
+        font-size: clamp(16px, 3vw, 32px);
+      }
+      .tabela-person .pphone {
+        font-size: clamp(14px, 2.5vw, 24px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="tabela">
+    <div class="tabela-inner">
+      <div class="tabela-logo-slot">
+        <div class="tabela-logo" id="tabelaLogo">
+          <img src="data/55fındık.png" alt="55 Fındık logosu" onerror="this.style.display='none'; document.getElementById('tabelaLogo').classList.add('logo-empty');" />
+        </div>
+      </div>
+      <div class="tabela-center">
+        <h1 class="tabela-title">55 FINDIK</h1>
+      </div>
+      <div class="tabela-people">
+        <div class="tabela-person">
+          <span class="pname">Levent SARIOĞLU</span>
+          <span class="pphone">0546 782 09 04</span>
+        </div>
+        <div class="tabela-person">
+          <span class="pname">Ethem ÇITLAK</span>
+          <span class="pphone">0545 351 55 55</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="bolum-cizgi"></div>
+
+  <div class="marquee-banner mb-green">
+    <div class="mb-track">
+      <span>🌰 55 FINDIK — SAMSUN'UN GÜVENİLİR FINDIK ALIM MERKEZİ 🌰</span>
+      <span>📞 GÜNCEL FINDIK ALIM FİYATLARI İÇİN BİZİ ARAYIN 📞</span>
+      <span>🌰 55 FINDIK — SAMSUN'UN GÜVENİLİR FINDIK ALIM MERKEZİ 🌰</span>
+      <span>📞 GÜNCEL FINDIK ALIM FİYATLARI İÇİN BİZİ ARAYIN 📞</span>
+    </div>
+  </div>
+
+  <section class="galeri-kayan" id="kayanGaleri">
+    <div class="wrap">
+      <div class="galeri-header">
+        <h2> <span>Sezon </span> Alımlarımız</h2>
+        <button class="galeri-btn" id="tumunuGosterBtn"><i class="fas fa-images"></i> Tümünü Göster</button>
+      </div>
+      <div class="slider-container">
+        <div class="slider-track" id="sliderTrack"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bolum-cizgi"></div>
+
+  <div class="marquee-banner mb-green">
+    <div class="mb-track">
+      <span>✅ DOĞRU TARTI • DOĞRU RANDIMAN • DOĞRU FİYAT ✅</span>
+      <span>📍 SAMSUN MERKEZ FINDIK ALIM NOKTAMIZ SİZİ BEKLİYOR 📍</span>
+      <span>✅ DOĞRU TARTI • DOĞRU RANDIMAN • DOĞRU FİYAT ✅</span>
+      <span>📍 SAMSUN MERKEZ FINDIK ALIM NOKTAMIZ SİZİ BEKLİYOR 📍</span>
+    </div>
+  </div>
+
+  <section class="iletisim" id="iletisim">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Bize Ulaşın</span>
+        <h2>İletişim</h2>
+      </div>
+      <div class="iletisim-panel">
+        <div class="iletisim-grid">
+          <div class="contact-card">
+
+            <div class="avatar-circle" id="brandLogoAvatar">
+              <img src="https://scontent.cdninstagram.com/v/t51.82787-19/558911130_18530301841001627_1354956487531749078_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=111&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=jnfAXQmYLwgQ7kNvwHGAGZs&_nc_oc=AdrKNA_xc9GI4bUuXsm-IjjmZ_Eh85FeKDChhI2eKSrbwzHLkHFkXscqcLCG87g6fng&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=F-jy8BHsvhgkFr-S0lkOjA&_nc_ss=7ba8c&oh=00_AQInHU0j7mANr8dJh6x6bsuNexXtO9pAl0MgvW1nlhWVlw&oe=6A990F96
+" alt="55 Fındık logosu" onerror="this.remove(); document.getElementById('brandLogoAvatar').classList.add('logo-bos-avatar'); document.getElementById('brandLogoAvatar').textContent='55';" />
+            </div>
+
+
+            <h3>Levent Sarıoğlu</h3>
+            <span class="role">Fındık Alım Uzmanı</span>
+            <span class="contact-phone">0546 782 09 04</span>
+            <div class="contact-buttons">
+              <a class="btn-contact btn-phone" href="tel:+905467820904" title="Ara"><i class="fas fa-phone"></i></a>
+              <a class="btn-contact btn-whatsapp" href="https://wa.me/905467820904" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a class="btn-contact btn-instagram" href="https://www.instagram.com/leventsarioglu55?igsi=MXFiODd6bGk0NDl5dQ==" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="contact-card brand-card">
+            <div class="avatar-circle" id="brandLogoAvatar">
+              <img src="data/55fındık.png" alt="55 Fındık logosu" onerror="this.remove(); document.getElementById('brandLogoAvatar').classList.add('logo-bos-avatar'); document.getElementById('brandLogoAvatar').textContent='55';" />
+            </div>
+            <h3>55 Fındık</h3>
+            <span class="role">Sosyal Medya Hesabımız</span>
+            <div class="contact-buttons">
+              <a class="btn-contact btn-instagram" href="https://www.instagram.com/55findik?igsi=MTB1cDJjNXRzenpteg==" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="contact-card">
+
+                  <div class="avatar-circle" id="brandLogoAvatar">
+              <img src="https://scontent.cdninstagram.com/v/t51.82787-19/728195834_17960952939124160_1296420823769173320_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=109&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=Y5ELb6eUS1sQ7kNvwGtzjHx&_nc_oc=AdqcKrhWltyKkQP8_KihsaVAiAxVWJBTRDPmpqNEdDlKTgNHVxHRopzke860HwblsAE&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=NESO_lkJbauAHNvFHFfo8A&_nc_ss=7ba8c&oh=00_AQL64rI3HOdJshucUd4oZJhL28eGo8K1XdbknkHBOjNyfA&oe=6A9913A0" alt="55 Fındık logosu" onerror="this.remove(); document.getElementById('brandLogoAvatar').classList.add('logo-bos-avatar'); document.getElementById('brandLogoAvatar').textContent='55';" />
+            </div>
+            <h3>Ethem Çıtlak</h3>
+            <span class="role">Fındık Alım Uzmanı</span>
+            <span class="contact-phone">0545 351 55 55</span>
+            <div class="contact-buttons">
+              <a class="btn-contact btn-phone" href="tel:+905453515555" title="Ara"><i class="fas fa-phone"></i></a>
+              <a class="btn-contact btn-whatsapp" href="https://wa.me/905453515555" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a class="btn-contact btn-instagram" href="https://www.instagram.com/ctlk.ethem?igsi=YmgwajNydTMwdm9i" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bolum-cizgi"></div>
+
+  <section class="harita" id="harita">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Bizi Ziyaret Edin</span>
+        <h2>Konumumuz</h2>
+      </div>
+      <div class="harita-grid">
+        <div class="harita-map">
+          <iframe src="https://www.google.com/maps?q=Samsun&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="harita-info">
+          <h3>Açık Adres</h3>
+          <div class="adres-satiri"><i class="fas fa-location-dot"></i><span>[ Açık adresinizi buraya yazın — Mahalle, Cadde/Sokak No, Samsun ]</span></div>
+          <div class="hakkimizda-baslik">Hakkımızda</div>
+          <p class="hakkimizda-p">55 Fındık olarak Samsun'da yıllardır fındık alım işiyle uğraşıyoruz. Doğru tartı, adil fiyat ve güvenilir hizmet anlayışıyla üreticimizin yanındayız.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bolum-cizgi"></div>
+
+  <section class="yorum-panel" id="yorumlar">
+    <div class="wrap">
+      <h2 class="yorum-baslik">💬 Müşteri Yorumları</h2>
+      <div class="yorum-form-kapsayici">
+        <div class="yorum-form-grid">
+          <input type="text" id="yorumIsim" class="yorum-input" placeholder="Adınız Soyadınız*">
+          <input type="tel" id="yorumTel" class="yorum-input" placeholder="Telefon Numaranız*">
+        </div>
+        <div class="yildiz-secici" id="yildizSecici">
+          <span class="star" data-deger="1"><i class="fas fa-star"></i></span>
+          <span class="star" data-deger="2"><i class="fas fa-star"></i></span>
+          <span class="star" data-deger="3"><i class="fas fa-star"></i></span>
+          <span class="star" data-deger="4"><i class="fas fa-star"></i></span>
+          <span class="star" data-deger="5"><i class="fas fa-star"></i></span>
+        </div>
+        <textarea id="yorumMetin" class="yorum-textarea" placeholder="Yorumunuzu yazın..."></textarea>
+        <div>
+          <button class="yorum-gonder-btn" id="yorumGonderBtn"><i class="fas fa-paper-plane"></i> Gönder</button>
+          <div class="yorum-durum" id="yorumDurum"></div>
+        </div>
+      </div>
+      <div class="yorum-listesi" id="yorumListesi"></div>
+      <button class="yorum-bak-btn" id="yorumBakBtn"><i class="fas fa-comments"></i> Yorumlara Bak</button>
+    </div>
+  </section>
+
+  <div class="bolum-cizgi"></div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>📸 Tüm Alım Fotoğrafları</h3>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="siralama-kutusu">
+        <select id="fotoSiralama">
+          <option value="yeni">Yeni → Eski</option>
+          <option value="eski">Eski → Yeni</option>
+        </select>
+      </div>
+      <div class="modal-grid" id="modalGrid"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="yorumModalOverlay">
+    <div class="modal-box" style="max-width: 750px;">
+      <div class="modal-header">
+        <h3>💬 Tüm Müşteri Yorumları</h3>
+        <button class="modal-close" id="yorumModalCloseBtn">✕</button>
+      </div>
+      <div class="siralama-kutusu">
+        <select id="yorumSiralama">
+          <option value="tarih-yeni">Tarihe Göre (Yeni → Eski)</option>
+          <option value="tarih-eski">Tarihe Göre (Eski → Yeni)</option>
+          <option value="yildiz-azalan">Yıldıza Göre (Azalan)</option>
+          <option value="yildiz-artan">Yıldıza Göre (Artan)</option>
+        </select>
+      </div>
+      <div class="yorum-listesi" id="yorumModalListesi"></div>
+    </div>
+  </div>
+
+  <a href="#harita" class="konum-float-btn" id="konumFloatBtn">
+    <i class="fas fa-location-dot"></i><span>Konumumuz</span>
+  </a>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-satir">&copy; <span id="yil"></span> <b>55 Fındık</b> — Samsun Fındık Alım Merkezi. Tüm hakları saklıdır.</div>
+      <div class="footer-kvkk">
+        Bu internet sitesi üzerinden bizimle paylaştığınız ad, telefon ve yorum bilgileri, yalnızca size dönüş yapabilmek ve talebinizi değerlendirebilmek amacıyla 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında işlenmektedir.
+      </div>
+      <div class="footer-yapim">Bu site 55 Fındık için tasarlanmış ve geliştirilmiştir.</div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, onSnapshot, query, where, serverTimestamp, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    import { firebaseConfig } from "./firebase-config.js";
+
+    (function() {
+      const defaultFotoList = [
+        { url: "https://i.ibb.co/ZzQgNwt3/Whats-App-mage-2026-08-17-at-16-31-01.jpg", aciklama: "Fındık alımı — günlük tartım ve paketleme işlemi gerçekleştirildi. Ürünlerimiz doğal ve yüksek kalitededir. Uzun açıklama testi amaçlıdır.", createdAt: Date.now() - 600000 },
+        { url: "https://i.ibb.co/ZzQgNwt3/Whats-App-mage-2026-08-17-at-16-31-01.jpg", aciklama: "Kaliteli fındık", createdAt: Date.now() - 500000 },
+        { url: "https://i.ibb.co/ZzQgNwt3/Whats-App-mage-2026-08-17-at-16-31-01.jpg", aciklama: "Tartım işlemi", createdAt: Date.now() - 400000 },
+        { url: "https://i.ibb.co/ZzQgNwt3/Whats-App-mage-2026-08-17-at-16-31-01.jpg", aciklama: "Ürün teslim ve paketleme", createdAt: Date.now() - 300000 },
+        { url: "https://i.ibb.co/ZzQgNwt3/Whats-App-mage-2026-08-17-at-16-31-01.jpg", aciklama: "Fındık alım merkezi", createdAt: Date.now() - 200000 },
+        { url: "https://i.ibb.co/ZzQgNwt3/Whats-App-mage-2026-08-17-at-16-31-01.jpg", aciklama: "Günlük alım", createdAt: Date.now() - 100000 }
+      ];
+      let fotoList = [...defaultFotoList];
+      let tumYorumlar = [];
+      const sliderTrack = document.getElementById('sliderTrack');
+      const modalGrid = document.getElementById('modalGrid');
+
+      let db = null;
+      let firebaseHazir = false;
+      try {
+        const dolduruldu = firebaseConfig.apiKey && !firebaseConfig.apiKey.startsWith('BURAYA');
+        if (dolduruldu) {
+          const app = initializeApp(firebaseConfig);
+          db = getFirestore(app);
+          firebaseHazir = true;
+        }
+      } catch (err) {
+        console.warn('Firebase başlatılamadı:', err);
+      }
+
+      let telegramAyar = { botToken: '', chatId: '', notifyOnVisit: false, notifyOnComment: false, notifyOnClick: false };
+
+      async function telegramAyarYukle() {
+        if (!firebaseHazir) return;
+        try {
+          const snap = await getDoc(doc(db, 'settings', 'telegram'));
+          if (snap.exists()) {
+            telegramAyar = { ...telegramAyar, ...snap.data() };
+          }
+        } catch (err) {
+          console.warn('Telegram ayarları okunamadı:', err);
+        }
+        telegramHazirlaEtkinlikler();
+      }
+
+      async function telegramBildir(mesaj) {
+        if (!telegramAyar.botToken || !telegramAyar.chatId) return;
+        try {
+          await fetch(`https://api.telegram.org/bot${telegramAyar.botToken}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: telegramAyar.chatId, text: mesaj, parse_mode: 'HTML' })
+          });
+        } catch (err) {
+          console.warn('Telegram bildirimi gönderilemedi:', err);
+        }
+      }
+
+      function telegramSaatDamgasi() {
+        return new Date().toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' });
+      }
+
+      function telegramHazirlaEtkinlikler() {
+        if (telegramAyar.notifyOnVisit && !sessionStorage.getItem('ziyaretBildirildi')) {
+          sessionStorage.setItem('ziyaretBildirildi', '1');
+          telegramBildir(`🌐 <b>Siteye yeni ziyaret</b>\n55fındık.com sitesine bir ziyaretçi girdi.\n🕒 ${telegramSaatDamgasi()}`);
+        }
+
+        if (telegramAyar.notifyOnClick) {
+          document.querySelectorAll('.btn-contact, .konum-float-btn, .galeri-btn, .yorum-bak-btn, .yorum-gonder-btn, #tumunuGosterBtn').forEach((el) => {
+            el.addEventListener('click', () => {
+              let etiket = el.getAttribute('title') || el.textContent.trim() || 'Bir buton';
+              const kart = el.closest('.contact-card');
+              if (kart) {
+                const isim = kart.querySelector('h3')?.textContent?.trim();
+                if (isim) etiket = `${isim} — ${etiket}`;
+              }
+              if (el.id === 'konumFloatBtn') etiket = 'Konumumuz butonu';
+              telegramBildir(`🖱️ <b>Tıklama oldu</b>\n${etiket}\n🕒 ${telegramSaatDamgasi()}`);
+            });
+          });
+        }
+      }
+
+      function renderSlider() {
+        if (!sliderTrack) return;
+        sliderTrack.innerHTML = '';
+        const kartlar = [...fotoList, ...fotoList];
+        kartlar.forEach((foto, index) => {
+          const card = document.createElement('div');
+          card.className = 'galeri-card';
+          const aciklama = foto.aciklama || `Alım Anı #${(index % fotoList.length) + 1}`;
+          card.innerHTML = `
+            <img src="${foto.url}" alt="${aciklama}" loading="lazy" referrerpolicy="no-referrer" />
+            <span class="card-cap">${aciklama}</span>
+          `;
+          sliderTrack.appendChild(card);
+        });
+      }
+
+      function renderModal(siralama) {
+        if (!modalGrid) return;
+        modalGrid.innerHTML = '';
+        let sirali = [...fotoList];
+        if (siralama === 'eski') {
+          sirali.sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
+        } else {
+          sirali.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+        }
+        sirali.forEach((foto, i) => {
+          const card = document.createElement('div');
+          card.className = 'galeri-card';
+          card.innerHTML = `<img src="${foto.url}" alt="${foto.aciklama || 'Foto ' + (i+1)}" loading="lazy" referrerpolicy="no-referrer" /><span class="card-cap">${foto.aciklama || '#' + (i+1)}</span>`;
+          modalGrid.appendChild(card);
+        });
+      }
+
+      function yildizGoster(puan) {
+        let html = '';
+        for (let i = 1; i <= 5; i++) {
+          if (i <= puan) {
+            html += '<i class="fas fa-star"></i>';
+          } else {
+            html += '<i class="fas fa-star bos"></i>';
+          }
+        }
+        return html;
+      }
+
+      function yorumKartOlustur(isim, tel, metin, puan) {
+        const kart = document.createElement('div');
+        kart.className = 'yorum-kart';
+        kart.innerHTML = `
+          <div class="yorum-ust">
+            <span class="yorum-isim">${isim || 'Anonim'}</span>
+            <span class="yorum-tel">${tel || '---'}</span>
+          </div>
+          <div class="yorum-yildizlar">${yildizGoster(puan || 0)}</div>
+          <div class="yorum-metin">${metin}</div>
+        `;
+        return kart;
+      }
+
+      function yorumlariCanliDinle() {
+        const yorumListesi = document.getElementById('yorumListesi');
+        if (!db || !yorumListesi) return;
+        const q = query(collection(db, 'comments'), where('approved', '==', true));
+        onSnapshot(q, (snap) => {
+          tumYorumlar = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+          tumYorumlar.sort((a, b) => {
+            const ta = a.createdAt?.toMillis?.() || 0;
+            const tb = b.createdAt?.toMillis?.() || 0;
+            return tb - ta;
+          });
+          yorumListesi.innerHTML = '';
+          tumYorumlar.slice(0, 3).forEach((y) => {
+            yorumListesi.appendChild(yorumKartOlustur(y.name, y.phone, y.text, y.rating));
+          });
+          renderYorumModal();
+        }, (err) => console.warn('Yorumlar okunamadı:', err));
+      }
+
+      function renderYorumModal() {
+        const modalListe = document.getElementById('yorumModalListesi');
+        if (!modalListe) return;
+        const siralama = document.getElementById('yorumSiralama')?.value || 'tarih-yeni';
+        let sirali = [...tumYorumlar];
+        switch (siralama) {
+          case 'tarih-yeni':
+            sirali.sort((a, b) => (b.createdAt?.toMillis?.() || 0) - (a.createdAt?.toMillis?.() || 0));
+            break;
+          case 'tarih-eski':
+            sirali.sort((a, b) => (a.createdAt?.toMillis?.() || 0) - (b.createdAt?.toMillis?.() || 0));
+            break;
+          case 'yildiz-azalan':
+            sirali.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+            break;
+          case 'yildiz-artan':
+            sirali.sort((a, b) => (a.rating || 0) - (b.rating || 0));
+            break;
+        }
+        modalListe.innerHTML = '';
+        if (sirali.length === 0) {
+          modalListe.innerHTML = '<p style="color:var(--krem-dim); text-align:center;">Henüz onaylanmış yorum yok.</p>';
+          return;
+        }
+        sirali.forEach((y) => {
+          modalListe.appendChild(yorumKartOlustur(y.name, y.phone, y.text, y.rating));
+        });
+      }
+
+      function galeriCanliDinle() {
+        if (!db) return;
+        const q = query(collection(db, 'gallery'));
+        onSnapshot(q, (snap) => {
+          if (!snap.empty) {
+            const docsSirali = snap.docs.slice().sort((a, b) => {
+              const ta = a.data().createdAt?.toMillis?.() || 0;
+              const tb = b.data().createdAt?.toMillis?.() || 0;
+              return tb - ta;
+            });
+            const calisanlar = docsSirali.filter((d) => {
+              const url = d.data().url || '';
+              return url.includes('i.ibb.co') || url.includes('i.postimg.cc');
+            });
+            if (calisanlar.length > 0) {
+              fotoList = calisanlar.map((d) => ({
+                url: d.data().url,
+                aciklama: d.data().aciklama || '',
+                createdAt: d.data().createdAt?.toMillis?.() || Date.now()
+              }));
+            }
+          }
+          renderSlider();
+          renderModal(document.getElementById('fotoSiralama')?.value || 'yeni');
+        }, (err) => console.warn('Galeri okunamadı:', err));
+      }
+
+      let secilenYildiz = 0;
+      const yildizSecici = document.getElementById('yildizSecici');
+      if (yildizSecici) {
+        const yildizlar = yildizSecici.querySelectorAll('.star');
+        yildizlar.forEach((yildiz) => {
+          yildiz.addEventListener('click', () => {
+            secilenYildiz = parseInt(yildiz.dataset.deger);
+            yildizlar.forEach((y) => {
+              if (parseInt(y.dataset.deger) <= secilenYildiz) {
+                y.classList.add('aktif');
+              } else {
+                y.classList.remove('aktif');
+              }
+            });
+          });
+        });
+      }
+
+      const yorumDurum = document.getElementById('yorumDurum');
+      const gonderBtn = document.getElementById('yorumGonderBtn');
+      if (gonderBtn) {
+        gonderBtn.addEventListener('click', async () => {
+          const isim = document.getElementById('yorumIsim').value.trim();
+          const tel = document.getElementById('yorumTel').value.trim();
+          const metin = document.getElementById('yorumMetin').value.trim();
+          if (!isim || !tel || !metin) {
+            alert('Lütfen isim, telefon ve yorum alanlarını doldurun.');
+            return;
+          }
+          if (secilenYildiz === 0) {
+            alert('Lütfen yıldız verin.');
+            return;
+          }
+          if (firebaseHazir) {
+            try {
+              await addDoc(collection(db, 'comments'), {
+                name: isim, phone: tel, text: metin,
+                approved: false, rating: secilenYildiz, createdAt: serverTimestamp()
+              });
+              if (yorumDurum) {
+                yorumDurum.classList.remove('hata');
+                yorumDurum.textContent = 'Teşekkürler! Yorumunuz incelendikten sonra sitede yayınlanacak.';
+              }
+              if (telegramAyar.notifyOnComment) {
+                telegramBildir(`💬 <b>Yeni yorum geldi</b>\n👤 ${isim}\n📞 ${tel}\n⭐ ${secilenYildiz}/5\n📝 ${metin}\n🕒 ${telegramSaatDamgasi()}`);
+              }
+            } catch (err) {
+              console.error(err);
+              if (yorumDurum) {
+                yorumDurum.classList.add('hata');
+                yorumDurum.textContent = 'Yorum gönderilemedi.';
+              }
+            }
+          }
+          document.getElementById('yorumIsim').value = '';
+          document.getElementById('yorumTel').value = '';
+          document.getElementById('yorumMetin').value = '';
+          secilenYildiz = 0;
+          if (yildizSecici) {
+            yildizSecici.querySelectorAll('.star').forEach((y) => y.classList.remove('aktif'));
+          }
+        });
+      }
+
+      const modalOverlay = document.getElementById('modalOverlay');
+      const modalCloseBtn = document.getElementById('modalCloseBtn');
+      const tumunuGosterBtn = document.getElementById('tumunuGosterBtn');
+      const fotoSiralama = document.getElementById('fotoSiralama');
+
+      if (tumunuGosterBtn) tumunuGosterBtn.addEventListener('click', () => {
+        renderModal(fotoSiralama?.value || 'yeni');
+        modalOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      });
+      if (modalCloseBtn) modalCloseBtn.addEventListener('click', () => {
+        modalOverlay.classList.remove('show');
+        document.body.style.overflow = '';
+      });
+      if (modalOverlay) modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+          modalOverlay.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+      });
+      if (fotoSiralama) fotoSiralama.addEventListener('change', () => {
+        renderModal(fotoSiralama.value);
+      });
+
+      const yorumModalOverlay = document.getElementById('yorumModalOverlay');
+      const yorumModalCloseBtn = document.getElementById('yorumModalCloseBtn');
+      const yorumBakBtn = document.getElementById('yorumBakBtn');
+      if (yorumBakBtn) yorumBakBtn.addEventListener('click', () => {
+        renderYorumModal();
+        yorumModalOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      });
+      if (yorumModalCloseBtn) yorumModalCloseBtn.addEventListener('click', () => {
+        yorumModalOverlay.classList.remove('show');
+        document.body.style.overflow = '';
+      });
+      if (yorumModalOverlay) yorumModalOverlay.addEventListener('click', (e) => {
+        if (e.target === yorumModalOverlay) {
+          yorumModalOverlay.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+      });
+      const siralamaSelect = document.getElementById('yorumSiralama');
+      if (siralamaSelect) siralamaSelect.addEventListener('change', renderYorumModal);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (modalOverlay.classList.contains('show')) {
+            modalOverlay.classList.remove('show');
+            document.body.style.overflow = '';
+          }
+          if (yorumModalOverlay.classList.contains('show')) {
+            yorumModalOverlay.classList.remove('show');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+
+      const konumBtn = document.getElementById('konumFloatBtn');
+      if (konumBtn) {
+        konumBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const hedef = document.getElementById('harita');
+          if (hedef) hedef.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('yil').textContent = new Date().getFullYear();
+        renderSlider();
+        renderModal('yeni');
+        if (firebaseHazir) {
+          galeriCanliDinle();
+          yorumlariCanliDinle();
+          telegramAyarYukle();
+        } else {
+          telegramHazirlaEtkinlikler();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
